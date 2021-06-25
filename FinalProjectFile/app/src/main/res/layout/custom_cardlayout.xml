@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardElevation="3dp"
+        app:cardMaxElevation="3dp"
+        app:cardCornerRadius="10dp">
+
+        <ImageView
+            android:id="@+id/customImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/penang"
+            android:scaleType="centerCrop">
+        </ImageView>
+        <TextView
+            android:id="@+id/customTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="States Name"
+            android:fontFamily="@font/pompadourbold"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:gravity="bottom"
+            android:layout_margin="20dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="5"/>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
