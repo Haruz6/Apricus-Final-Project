@@ -33,15 +33,17 @@ public class LoginActivity extends AppCompatActivity {
                 String user = username.getText().toString();
                 String pass = password.getText().toString();
 
-                if(user.equals("") || pass.equals(""))
+                if(user.equals("") || pass.equals("")){
                     Toast.makeText(LoginActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
+                }
+
                 else{
                     Boolean checkuserpass = DB.checkusernamepassword(user, pass);
                     if(checkuserpass == true)
                     {
                         Toast.makeText(LoginActivity.this, "Sign In Successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-                        startActivity(intent);
+                        Intent homeintent = new Intent(getApplicationContext(), HomeActivity.class);
+                        startActivity(homeintent);
                     } else {
                         Toast.makeText(LoginActivity.this, "Invalid Credential", Toast.LENGTH_SHORT).show();
                     }
@@ -55,7 +57,8 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+                Intent signupintent = new Intent(getApplicationContext(), SignUpActivity.class);
+                startActivity(signupintent);
             }
         });
 

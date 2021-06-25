@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText username, idNumber, password, repassword;
+    private EditText username, password, repassword;
     private Button signup, signin;
     private DatabaseHelper DB;
 
@@ -33,15 +33,13 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String user = username.getText().toString();
-                String idNum = idNumber.getText().toString();
+                //String idNum = idNumber.getText().toString();
                 String pass = password.getText().toString();
                 String repass = repassword.getText().toString();
 
-                if(user.equals("") || idNum.equals("") || pass.equals("") || repass.equals("")) {
+                if(user.equals("") || pass.equals("") || repass.equals("")) {
                     Toast.makeText(SignUpActivity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-
                 }
-
                 else {
                     if(pass.equals(repass)){
                         Boolean checkuser = DB.checkusername(user);
@@ -49,7 +47,8 @@ public class SignUpActivity extends AppCompatActivity {
                             Boolean insert = DB.insertData(user, pass);
                             if(insert){
                                 Toast.makeText(SignUpActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                Intent homeintent = new Intent(getApplicationContext(), HomeActivity.class);
+                                startActivity(homeintent);
                             } else {
                                 Toast.makeText(SignUpActivity.this, "Registration Failed", Toast.LENGTH_SHORT).show();
                             }
@@ -70,7 +69,8 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent signinintent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(signinintent);
             }
         });
 

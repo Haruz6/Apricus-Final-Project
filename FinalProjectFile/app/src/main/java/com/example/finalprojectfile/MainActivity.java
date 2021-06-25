@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
             public void run() {
 
-                Intent home = new Intent(MainActivity.this, HomeActivity.class);
+                Intent home = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(home);
                 finish();
             }
