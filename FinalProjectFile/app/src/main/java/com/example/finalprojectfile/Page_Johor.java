@@ -15,13 +15,13 @@ public class Page_Johor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page_johor);
 
-        TabLayout tablayout = findViewById((R.id.tabBar_Johor));
-        TabItem tababout_johor = findViewById((R.id.tabItem_About_Johor));
-        TabItem tabfoods_johor = findViewById((R.id.tabItem_Foods_Johor));
-        TabItem tabcultures_johor = findViewById((R.id.tabItem_Cultures_Johor));
-        TabItem tabspot_johor = findViewById((R.id.tabItem_Spot_Johor));
-        ViewPager viewPager_johor = findViewById(R.id.viewPager1_Johor);
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),tablayout.getTabCount());
+        TabLayout tablayout = findViewById((R.id.tabBar_johor));
+        TabItem tababout_johor = findViewById((R.id.tabItem_About_johor));
+        TabItem tabfoods_johor = findViewById((R.id.tabItem_Foods_johor));
+        TabItem tabcultures_johor = findViewById((R.id.tabItem_Cultures_johor));
+        TabItem tabspot_johor = findViewById((R.id.tabItem_Spot_johor));
+        ViewPager viewPager_johor = findViewById(R.id.viewPager1_johor);
+        PagerAdapter_johor pagerAdapter = new PagerAdapter_johor(getSupportFragmentManager(),tablayout.getTabCount());
         viewPager_johor.setAdapter(pagerAdapter);
 
         tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

@@ -7,44 +7,44 @@
     tools:context=".Page_Johor">
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager1_johor"
+        android:id="@+id/viewPager1_penang"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabBar_johor" />
+        app:layout_constraintTop_toBottomOf="@+id/tabBar_penang" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabBar_johor"
+        android:id="@+id/tabBar_penang"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        app:layout_constraintBottom_toTopOf="@+id/viewPager1_johor"
+        app:layout_constraintBottom_toTopOf="@+id/viewPager1_penang"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItem_About_johor"
+            android:id="@+id/tabItem_About_penang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="About" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItem_Foods_johor"
+            android:id="@+id/tabItem_Foods_penang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Foods" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItem_Cultures_johor"
+            android:id="@+id/tabItem_Cultures_penang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cultures" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/tabItem_Spot_johor"
+            android:id="@+id/tabItem_Spot_penang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Spot" />
@@ -54,7 +54,7 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/tabBar_johor"
+        app:layout_constraintBottom_toTopOf="@+id/tabBar_penang"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/johor_2" />
