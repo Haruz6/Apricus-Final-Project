@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="350dp"
+    android:layout_height="140dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="20dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="100dp"
         app:cardElevation="1dp"
         app:cardMaxElevation="3dp"
         app:cardCornerRadius="10dp">
 
         <ImageView
-            android:id="@+id/customImageView"
+            android:id="@+id/customCardImageView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             android:src="@drawable/penang"
             android:scaleType="centerCrop">
         </ImageView>
+
         <TextView
-            android:id="@+id/customTextView"
+            android:id="@+id/customCardTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="States Name"
-            android:fontFamily="@font/pompadourbold"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:gravity="bottom"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/customCardImageView"
             android:layout_margin="20dp"
+            android:fontFamily="@font/pompadourbold"
+            android:text="Items Name"
             android:shadowColor="@color/black"
-            android:shadowRadius="5"/>
+            android:shadowRadius="5"
+            android:layout_gravity="bottom"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
     </androidx.cardview.widget.CardView>
 

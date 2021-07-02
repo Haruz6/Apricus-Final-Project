@@ -4,12 +4,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_xplorem"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_xplorem_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProjectFile">
-        <activity android:name=".Page_Johor"></activity>
+        <activity android:name=".User_Profile_Activity"></activity>
+        <activity android:name=".Page_Johor" />
+        <activity android:name=".Page_Penang" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".HomeActivity" />

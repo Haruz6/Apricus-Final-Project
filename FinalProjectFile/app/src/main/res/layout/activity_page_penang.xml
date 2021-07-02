@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Page_Johor">
+    tools:context=".Page_Penang">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager1_penang"
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        app:layout_constraintBottom_toTopOf="@+id/viewPager1_penang"
+        app:layout_constraintBottom_toTopOf="@id/viewPager1_penang"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -54,9 +54,9 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/tabBar_penang"
+        app:layout_constraintBottom_toTopOf="@id/tabBar_penang"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/johor_2" />
+        app:srcCompat="@drawable/penang_2"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase myDB) {
-        myDB.execSQL("CREATE TABLE USERS(username TEXT primary key, password TEXT)");
+        myDB.execSQL("CREATE TABLE USERS(username TEXT primary key, password TEXT, image BLOB)");
 
     }
 
@@ -35,7 +35,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
-        //contentValues.put("idNumber", idNumber);
         contentValues.put("password", password);
         long result = myDB.insert("users",null,contentValues);
         if(result == 1) return false;
@@ -59,6 +58,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     {
         SQLiteDatabase myDB = this.getWritableDatabase();
         Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ? and password = ?", new String[]{username, password});
+        if(cursor.getCount() > 0)
+            return true;
+        else
+            return false;
+    }
+
+    public Boolean updatePassword(String username, String password){
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("password", password);
+        Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ?", new String[]{username});
         if(cursor.getCount() > 0)
             return true;
         else

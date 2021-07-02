@@ -1,9 +1,12 @@
 package com.example.finalprojectfile;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +18,7 @@ import java.util.ArrayList;
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
     String data[];
     Context context;
+    int lastPosition = -1;
     ArrayList<FeaturedHelperClass> featuredLocations;
 
     private OnNoteListener mOnNoteListener;
@@ -40,7 +44,19 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         holder.imageview.setImageResource(featuredHelperClass.getImage());
         holder.textview.setText(featuredHelperClass.getStatenames());
+        setAnimation(holder.itemView, position);
 
+    }
+
+    private void setAnimation(View itemView, int position) {
+        Context cont = itemView.getContext();
+        if(position > lastPosition)
+        {
+            Animation animation = AnimationUtils.loadAnimation(cont, android.R.anim.fade_in);
+            itemView.setAnimation(animation);
+            lastPosition = position;
+
+        }
     }
 
     @Override
@@ -56,6 +72,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView, OnNoteListener onNoteListener) {
             super(itemView);
+            //context = itemView.getContext();
             imageview = itemView.findViewById(R.id.customImageView);
             textview = itemView.findViewById(R.id.customTextView);
             this.onNoteListener = onNoteListener;
@@ -66,6 +83,23 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         @Override
         public void onClick(View v) {
             onNoteListener.onNoteClick(getAdapterPosition());
+            Context cont = v.getContext();
+            switch(getAdapterPosition()) {
+                case 0:
+                    Intent testIntent1 = new Intent(cont, Page_Penang.class);
+                    cont.startActivity(testIntent1);
+                    break;
+                case 1:
+                    Intent testIntent2 = new Intent(cont, Page_Johor.class);
+                    cont.startActivity(testIntent2);
+                    break;
+                case 2:
+                    Intent testIntent3 = new Intent(cont, Page_Melaka.class);
+                    cont.startActivity(testIntent3);
+                    break;
+
+            }
+
 
         }
     }

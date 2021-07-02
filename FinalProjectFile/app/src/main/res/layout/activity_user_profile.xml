@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User_Profile_Activity"
+    android:background="@drawable/modules_backdrop">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:elevation="10sp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/profile_image_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/profile_button_layout"
+        android:layout_marginBottom="260dp"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:elevation="5dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+            app:srcCompat="@mipmap/ic_launcher_xplorem" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/profile_button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/pick_image"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#2f2974"
+            android:fontFamily="@font/neuehaasunicalight"
+            android:text="Pick An Image"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="180dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Your Password" />
+
+        <EditText
+            android:id="@+id/change_password_edit"
+            android:layout_width="210dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custominput"
+            android:backgroundTint="#FFFFFF"
+            android:drawableStart="@drawable/custom_password_input"
+            android:drawablePadding="12dp"
+            android:elevation="5dp"
+            android:ems="10"
+            android:fontFamily="@font/neuehaasunicalight"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:outlineAmbientShadowColor="@color/black"
+            android:paddingStart="8dp"
+            android:paddingEnd="12dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/profile_button_layout">
+
+        <Button
+            android:id="@+id/save_changes"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:backgroundTint="#2f2974"
+            android:fontFamily="@font/neuehaasunicalight"
+            android:text="Save Changes"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
