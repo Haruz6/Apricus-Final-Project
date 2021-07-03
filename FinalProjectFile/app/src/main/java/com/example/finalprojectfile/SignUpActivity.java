@@ -33,7 +33,6 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String user = username.getText().toString();
-                //String idNum = idNumber.getText().toString();
                 String pass = password.getText().toString();
                 String repass = repassword.getText().toString();
 

@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -35,6 +36,8 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
     NavigationView navigationView;
     Toolbar toolbar;
 
+    TextView searchbar;
+
     String currentUser;
 
     String statesNames[] = {"Sarawak", "Sabah", "Johor", "Selangor",
@@ -45,6 +48,8 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        searchbar = findViewById(R.id.text_search_bar);
 
         Intent intent = getIntent();
 
@@ -82,6 +87,15 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
 
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setCheckedItem(R.id.nav_home);
+
+        searchbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent searchIntent = new Intent(HomeActivity.this, SearchActivity.class);
+                startActivity(searchIntent);
+
+            }
+        });
     }
 
     //To avoid activity closure upon pressing back.

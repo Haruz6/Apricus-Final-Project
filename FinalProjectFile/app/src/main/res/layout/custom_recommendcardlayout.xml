@@ -4,7 +4,7 @@
     android:layout_height="140dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="15dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/customCardImageView"
-            android:layout_margin="20dp"
+            android:layout_margin="15dp"
             android:fontFamily="@font/pompadourbold"
             android:text="Items Name"
             android:shadowColor="@color/black"

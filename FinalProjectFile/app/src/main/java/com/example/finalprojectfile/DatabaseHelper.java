@@ -70,8 +70,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put("password", password);
         Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ?", new String[]{username});
         if(cursor.getCount() > 0)
-            return true;
+        {
+            long result = myDB.update("users", values, "username = ?", new String[]{username});
+            if(result == -1)
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
         else
+        {
             return false;
+        }
+
     }
 }

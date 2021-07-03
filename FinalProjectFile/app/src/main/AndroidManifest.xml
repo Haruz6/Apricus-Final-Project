@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_xplorem_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProjectFile">
-        <activity android:name=".User_Profile_Activity"></activity>
+        <activity android:name=".SearchActivity"/>
+        <activity android:name=".User_Profile_Activity" />
         <activity android:name=".Page_Johor" />
         <activity android:name=".Page_Penang" />
         <activity android:name=".LoginActivity" />
