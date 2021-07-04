@@ -22,8 +22,8 @@ public class PagerAdapter_kelantan extends FragmentPagerAdapter {
         switch (position)
         {
             case 0: return new Fragment_About_Kelantan();
-            case 1: return new Fragment_Cultures_Kelantan();
-            case 2: return new Fragment_Foods_Kelantan();
+            case 1: return new Fragment_Foods_Kelantan();
+            case 2: return new Fragment_Cultures_Kelantan();
             case 3: return new Fragment_Spot_Kelantan();
             default: return  null;
         }

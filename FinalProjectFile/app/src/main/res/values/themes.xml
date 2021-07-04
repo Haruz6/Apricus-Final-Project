@@ -34,5 +34,10 @@
         <item name="android:fontFamily">@font/headingpompadour</item>
         <item name="android:textSize">15dp</item>
     </style>
+    <style name="ShapeAppearanceOverlay.App.RoundCorner" parent="">
+        <item name = "cornerSize">10%</item>
+    </style>
+
+
 
 </resources>

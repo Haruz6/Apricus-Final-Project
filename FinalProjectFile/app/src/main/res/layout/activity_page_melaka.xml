@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Page_Johor">
+    tools:context=".Page_Melaka">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager1_melaka"
@@ -13,17 +13,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabBar_melaka" />
+        app:layout_constraintTop_toBottomOf="@+id/tabBar_melaka">
+
+    </androidx.viewpager.widget.ViewPager>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabBar_melaka"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="250dp"
-        app:layout_constraintBottom_toTopOf="@+id/viewPager1_melaka"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@id/viewPager1_melaka"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@color/white"
+        app:tabIndicatorColor="@android:color/holo_blue_bright"
+        app:tabTextColor="@color/material_on_background_emphasis_high_type">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tabItem_About_melaka"
@@ -52,11 +58,30 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="412dp"
+        android:layout_height="247dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/tabBar_melaka"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/johor_2" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/melaka_1" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="106dp"
+        android:layout_height="55dp"
+        android:text="Johor"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/tabBar_melaka"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.625" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

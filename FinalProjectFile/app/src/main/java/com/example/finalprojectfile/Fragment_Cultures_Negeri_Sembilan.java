@@ -58,6 +58,6 @@ public class Fragment_Cultures_Negeri_Sembilan extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__cultures__johor, container, false);
+        return inflater.inflate(R.layout.fragment__cultures__negeri_sembilan, container, false);
     }
 }

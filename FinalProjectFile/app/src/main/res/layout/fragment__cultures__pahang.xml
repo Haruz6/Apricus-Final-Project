@@ -4,44 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
     tools:context=".Fragment_Cultures_Pahang">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="Culture：Temple Chingay Parade                         "
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="50dp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:text="The ancient temple travel god is an ancient Johor temple dedicated to the five deities. 148 years have passed since 1870. Every year on the night of the 20th day of the first month of the lunar calendar, these five gods will parade out on the street and receive worship by a large number of believers. The temple fair, which was originally a religious belief of the Chinese people, has now evolved into an annual grand parade by the Johor Bahru people, and it has been listed as a tourist attraction and a national heritage of Malaysia by the government. "
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="343dp"
-        android:adjustViewBounds="true"
-        android:src="@drawable/johor_1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:adjustViewBounds="true"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner"
+                app:srcCompat="@drawable/johor_3" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/headingpompadour"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="Temple Chingay Parade                         "
+                android:textColor="@color/black"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="200dp"
+                android:fontFamily="@font/neuehaasunicaregular"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="The ancient temple travel god is an ancient Johor temple dedicated to the five deities. 148 years have passed since 1870. Every year on the night of the 20th day of the first month of the lunar calendar, these five gods will parade out on the street and receive worship by a large number of believers. The temple fair, which was originally a religious belief of the Chinese people, has now evolved into an annual grand parade by the Johor Bahru people, and it has been listed as a tourist attraction and a national heritage of Malaysia by the government. "
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

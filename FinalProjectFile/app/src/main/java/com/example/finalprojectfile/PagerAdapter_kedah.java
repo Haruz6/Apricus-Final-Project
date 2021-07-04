@@ -22,8 +22,8 @@ public class PagerAdapter_kedah extends FragmentPagerAdapter {
         switch (position)
         {
             case 0: return new Fragment_About_Kedah();
-            case 1: return new Fragment_Cultures_Kedah();
-            case 2: return new Fragment_Foods_Kedah();
+            case 1: return new Fragment_Foods_Kedah();
+            case 2: return new Fragment_Cultures_Kedah();
             case 3: return new Fragment_Spot_Kedah();
             default: return  null;
         }

@@ -22,8 +22,8 @@ public class PagerAdapter_melaka extends FragmentPagerAdapter {
         switch (position)
         {
             case 0: return new Fragment_About_Melaka();
-            case 1: return new Fragment_Cultures_Melaka();
-            case 2: return new Fragment_Foods_Melaka();
+            case 1: return new Fragment_Foods_Melaka();
+            case 2: return new Fragment_Cultures_Melaka();
             case 3: return new Fragment_Spot_Melaka();
             default: return  null;
         }

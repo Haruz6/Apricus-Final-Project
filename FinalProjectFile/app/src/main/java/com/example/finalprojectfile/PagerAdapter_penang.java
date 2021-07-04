@@ -22,8 +22,8 @@ public class PagerAdapter_penang extends FragmentPagerAdapter {
         switch (position)
         {
             case 0: return new Fragment_About_Penang();
-            case 1: return new Fragment_Cultures_Penang();
-            case 2: return new Fragment_Foods_Penang();
+            case 1: return new Fragment_Foods_Penang();
+            case 2: return new Fragment_Cultures_Penang();
             case 3: return new Fragment_Spot_Penang();
             default: return  null;
         }

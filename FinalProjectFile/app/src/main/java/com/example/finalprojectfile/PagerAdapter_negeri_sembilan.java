@@ -22,8 +22,8 @@ public class PagerAdapter_negeri_sembilan extends FragmentPagerAdapter {
         switch (position)
         {
             case 0: return new Fragment_About_Negeri_Sembilan();
-            case 1: return new Fragment_Cultures_Negeri_Sembilan();
-            case 2: return new Fragment_Foods_Negeri_Sembilan();
+            case 1: return new Fragment_Foods_Negeri_Sembilan();
+            case 2: return new Fragment_Cultures_Negeri_Sembilan();
             case 3: return new Fragment_Spot_Negeri_Sembilan();
             default: return  null;
         }
