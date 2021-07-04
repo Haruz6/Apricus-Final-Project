@@ -21,17 +21,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/shapeableImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:adjustViewBounds="true"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner"
-                app:srcCompat="@drawable/johor_3" />
-
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"

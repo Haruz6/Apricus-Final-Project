@@ -58,8 +58,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="416dp"
+        android:layout_height="247dp"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/tabBar_penang"
@@ -68,13 +68,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/johor_2" />
+        app:srcCompat="@drawable/penang_2" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="106dp"
         android:layout_height="55dp"
-        android:text="Johor"
+        android:text="Penang"
         android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/tabBar_penang"

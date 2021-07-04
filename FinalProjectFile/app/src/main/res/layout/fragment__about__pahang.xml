@@ -17,7 +17,7 @@
         android:fontFamily="@font/neuehaasunicaregular"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:text="Johor, also spelled as Johore, is a state of Malaysia in the south of the Malay Peninsula. Johor has land borders with the Malaysian states of Pahang to the north and Malacca and Negeri Sembilan to the northwest."
+        android:text="Most areas of Pahang are covered by dense forests and are located in the vast Pahang River basin. The inland is a wide and fertile mountain basin; the central part is a plain interlaced with rivers; there are 32 kilometers of alluvial land along the coast, including Kuantan, Pahang, Rompin, Endau and Mersing Port. ) All river deltas and estuary plains."
         android:textColor="?android:attr/textColorSecondary"
         android:textColorHighlight="@color/black"
         android:textSize="18sp"

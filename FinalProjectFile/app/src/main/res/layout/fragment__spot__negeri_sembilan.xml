@@ -30,7 +30,7 @@
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.RoundCorner"
-                app:srcCompat="@drawable/johor_3" />
+                app:srcCompat="@drawable/negeri_sembilan_1" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -44,7 +44,7 @@
                 android:fontFamily="@font/headingpompadour"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                android:text="Temple Chingay Parade                         "
+                android:text="State Museum Complex"
                 android:textColor="@color/black"
                 android:textSize="30sp" />
 
@@ -57,7 +57,7 @@
                 android:fontFamily="@font/neuehaasunicaregular"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                android:text="The ancient temple travel god is an ancient Johor temple dedicated to the five deities. 148 years have passed since 1870. Every year on the night of the 20th day of the first month of the lunar calendar, these five gods will parade out on the street and receive worship by a large number of believers. The temple fair, which was originally a religious belief of the Chinese people, has now evolved into an annual grand parade by the Johor Bahru people, and it has been listed as a tourist attraction and a national heritage of Malaysia by the government. "
+                android:text="The center is based on the traditional residences of Minangkabao people. The main three buildings include the State Museum (also known as Teratak perpatih), Ampang tinggi palace and Negeri Sembilan House. The State Museum displays royal silver and bronze wares, old firearms, handicrafts, artworks, traditional costumes and photos. You can learn about the history and customs of Negeri Sembilan in Minangkabaoya."
                 android:textSize="18sp" />
 
         </LinearLayout>

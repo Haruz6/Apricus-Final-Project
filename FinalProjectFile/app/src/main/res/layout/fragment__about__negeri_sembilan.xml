@@ -17,7 +17,7 @@
         android:fontFamily="@font/neuehaasunicaregular"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
-        android:text="Johor, also spelled as Johore, is a state of Malaysia in the south of the Malay Peninsula. Johor has land borders with the Malaysian states of Pahang to the north and Malacca and Negeri Sembilan to the northwest."
+        android:text="Negeri Sembilan is a state in Malaysia which lies on the western coast of Peninsular Malaysia. It borders Selangor on the north, Pahang in the east, and Melaka and Johor to the south."
         android:textColor="?android:attr/textColorSecondary"
         android:textColorHighlight="@color/black"
         android:textSize="18sp"
