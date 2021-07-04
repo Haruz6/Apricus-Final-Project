@@ -148,7 +148,7 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
                 startActivity(intent);
                 break;
             case R.id.nav_trivia:
-                intent = new Intent(HomeActivity.this, QuizActivity.class);
+                intent = new Intent(HomeActivity.this, StartActivity.class);
                 startActivity(intent);
                 break;
             case R.id.nav_camera:
