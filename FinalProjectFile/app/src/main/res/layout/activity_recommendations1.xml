@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    tools:context=".RecommendationsActivity1">
 
     <include
         android:id="@+id/toolbar"
@@ -15,21 +15,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
-        android:text="Search Your States!"
+        android:text="Your Recommendations"
         android:fontFamily="@font/pompadourbold"
         android:textSize="25dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:padding="10dp"/>
 
+    <TextView
+        android:id="@+id/rec_details"
+        android:layout_below="@id/searchTextpage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't know what to choose? Look at our suggestions!"
+        android:fontFamily="@font/neuehaasunicalight"
+        android:textSize="12sp"
+        android:layout_marginLeft="20dp"
+        android:padding="0dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/search_recyclerview"
+        android:layout_below="@id/rec_details"
+        android:id="@+id/recommendRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchTextpage"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/white"
-        android:padding="10dp" />
+        android:padding="10dp"/>
 
 </RelativeLayout>

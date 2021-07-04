@@ -13,12 +13,16 @@
                 android:icon="@drawable/nav_profile"/>
             <item
                 android:id="@+id/nav_coupons"
-                android:title="Coupons"
-                android:icon="@drawable/nav_coupon"/>
+                android:icon="@drawable/nav_coupon"
+                android:title="Coupons" />
             <item
                 android:id="@+id/nav_trivia"
                 android:title="Quiz"
                 android:icon="@drawable/nav_quiz"/>
+            <item
+                android:id="@+id/nav_camera"
+                android:title="Camera"
+                android:icon="@drawable/nav_camera"/>
             <item
                 android:id="@+id/nav_logout"
                 android:title="Log Out"

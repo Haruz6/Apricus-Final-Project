@@ -3,8 +3,10 @@ package com.example.finalprojectfile;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 
 import androidx.annotation.Nullable;
 
@@ -86,4 +88,35 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
     }
+
+    /*
+    public void addBitmap(String username, byte[] image)
+    {
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("image", image);
+        Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ?", new String[]{username});
+        myDB.update("users", values, "username = ?", new String[]{username});
+
+    }
+
+    public byte[] getBitmapByName(String username)
+    {
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+
+        String[] select = {"image"};
+
+        qb.setTables("users");
+
+        Cursor cursor = qb.query(myDB,select,"username = ?", new String[]{username},null,null, null);
+        byte[] result = null;
+        if(cursor.moveToFirst())
+        {
+            do{
+                result = cursor.getBlob(cursor.getColumnIndex("image"));
+            }while(cursor.moveToNext());
+        }
+        return result;
+    }*/
 }

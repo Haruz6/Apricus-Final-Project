@@ -42,7 +42,6 @@
         android:id="@+id/profile_image_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/profile_button_layout"
         android:layout_marginBottom="260dp"
         android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
@@ -56,50 +55,31 @@
             android:layout_height="150dp"
             android:layout_gravity="center_horizontal"
             android:elevation="5dp"
+            android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
             app:srcCompat="@mipmap/ic_launcher_xplorem" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/profile_button_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <Button
-            android:id="@+id/pick_image"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:backgroundTint="#2f2974"
-            android:fontFamily="@font/neuehaasunicalight"
-            android:text="Pick An Image"
-            android:textSize="12dp" />
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="180dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/profile_image_layout"
+        app:layout_constraintVertical_bias="0.19">
 
         <TextView
             android:id="@+id/profile_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/pompadourbold"
-            android:layout_marginBottom="10dp"/>
+            android:text="Username" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -134,11 +114,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profile_button_layout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.13">
 
         <Button
             android:id="@+id/save_changes"

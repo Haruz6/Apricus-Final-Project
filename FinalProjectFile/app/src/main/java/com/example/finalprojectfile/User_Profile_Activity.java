@@ -2,13 +2,17 @@ package com.example.finalprojectfile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +20,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.finalprojectfile.Utils.Utils;
+import com.google.android.material.imageview.ShapeableImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -33,9 +40,10 @@ public class User_Profile_Activity extends AppCompatActivity implements View.OnC
     private TextView usernameText;
 
     private ImageView profileImageView;
-    private Button pickImage;
+    //private Button pickImage;
     private Button saveChanges;
     private ImageButton navback;
+    private ShapeableImageView profileImage;
 
     String currentUser;
 
@@ -49,7 +57,7 @@ public class User_Profile_Activity extends AppCompatActivity implements View.OnC
 
         profileImageView = (ImageView) findViewById(R.id.profile_image);
         passwordET = findViewById(R.id.change_password_edit);
-        pickImage = (Button) findViewById(R.id.pick_image);
+        //pickImage = (Button) findViewById(R.id.pick_image);
         saveChanges = findViewById(R.id.save_changes);
         usernameText = findViewById(R.id.profile_username);
         DB = new DatabaseHelper(this);
@@ -60,6 +68,18 @@ public class User_Profile_Activity extends AppCompatActivity implements View.OnC
         currentUser = intent.getStringExtra("currentUser");
         usernameText.setText(currentUser);
 
+        /*
+        byte[] data = DB.getBitmapByName(currentUser);
+        if(data != null)
+        {
+            Bitmap bitmap = Utils.getImage(data);
+            profileImageView.setImageBitmap(bitmap);
+        }
+        else
+        {
+            profileImageView.setImageResource(R.drawable.ic_launcher_xplorem_background);
+        }*/
+
         navback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +88,7 @@ public class User_Profile_Activity extends AppCompatActivity implements View.OnC
         });
 
 
+        /*
         pickImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,7 +96,7 @@ public class User_Profile_Activity extends AppCompatActivity implements View.OnC
                 photoPickerIntent.setType("image/*");
                 startActivityForResult(photoPickerIntent, SELECT_PHOTO);
             }
-        });
+        });*/
 
 
         saveChanges.setOnClickListener(new View.OnClickListener() {
@@ -117,21 +138,55 @@ public class User_Profile_Activity extends AppCompatActivity implements View.OnC
 
     }
 
+    /*
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == SELECT_PHOTO){
             if(resultCode == RESULT_OK){
                 try{
+                    Intent intent = getIntent();
+                    String usernameCurr = intent.getStringExtra("currentUser");
+
                     final Uri imageUri = data.getData();
                     final InputStream imageStream = getContentResolver().openInputStream(imageUri);
                     final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                    profileImageView.setImageBitmap(selectedImage);
+
+                    //Bitmap bitmap = ((BitmapDrawable) profileImageView.getDrawable()).getBitmap();
+                    //DB.addBitmap(usernameCurr,Utils.getBytes(selectedImage));
+
+                    /*
+                    AlertDialog.Builder builder = new AlertDialog.Builder(User_Profile_Activity.this);
+                    builder.setTitle("Enter image name");
+
+                    EditText editText = new EditText(User_Profile_Activity.this);
+                    builder.setView(editText);
+
+                    builder.setNegativeButton("Cancel", (dialog, which) -> {
+                        dialog.dismiss();
+                    });
+                    builder.setPositiveButton("Okay", new DialogInterface.OnClickListener(){
+                        public void onClick(DialogInterface dialog, int which){
+                            if(!TextUtils.isEmpty(editText.getText().toString()))
+                            {
+                                DB.addBitmap(currentUser, editText.getText().toString(), Utils.getBytes(bitmap));
+                                Toast.makeText(User_Profile_Activity.this, "Image Saved!", Toast.LENGTH_SHORT).show();
+
+                            }
+                            else
+                            {
+                                Toast.makeText(User_Profile_Activity.this, "Name can't be empty!", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                    builder.show();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
             }
         }
-    }
+    }*/
 
     private void saveUser(){
         //String usernameString = usernameET.getText().toString().trim();

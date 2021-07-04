@@ -10,8 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -123,7 +126,7 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
         Intent intent;
         switch(v.getId()){
             case R.id.recommendationCard:
-                intent = new Intent(this, Page_Johor.class);
+                intent = new Intent(this, RecommendationsActivity1.class);
                 startActivity(intent);
                 break;
         }
@@ -141,12 +144,16 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
                 startActivity(intent);
                 break;
             case R.id.nav_coupons:
-                intent = new Intent(HomeActivity.this, Page_Johor.class);
+                intent = new Intent(HomeActivity.this, Coupon.class);
                 startActivity(intent);
                 break;
             case R.id.nav_trivia:
-                intent = new Intent(HomeActivity.this, Page_Johor.class);
+                intent = new Intent(HomeActivity.this, QuizActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.nav_camera:
+                Intent open_camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivity(open_camera);
                 break;
             case R.id.nav_logout:
                 Toast.makeText(HomeActivity.this, "Logged Out", Toast.LENGTH_SHORT).show();
@@ -157,5 +164,9 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
 
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+
+
     }
+
+
 }
