@@ -57,7 +57,10 @@ public class QuizActivity extends AppCompatActivity {
         Collections.shuffle(questionList);
         showNextQuestion();
 
+        Intent intent = getIntent();
+        String usernameCurr = intent.getStringExtra("currentUser");
         DB = new DatabaseHelper(this);
+
 
 
         buttonConfirmNext.setOnClickListener(new View.OnClickListener() {
@@ -129,10 +132,15 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
     private void finishQuiz() {
+
         Intent resultIntent = new Intent();
         resultIntent.putExtra(EXTRA_SCORE, score);
         setResult(RESULT_OK, resultIntent);
 
+        Intent intent = getIntent();
+        String usernameCurr = intent.getStringExtra("currentUser");
+        int points = DB.getScore(usernameCurr)+ score;
+        DB.updatePoints(usernameCurr, points);
         finish();
     }
 

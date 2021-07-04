@@ -111,6 +111,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
 
     }
+
+    public int getScore(String username){
+        int result = -1;
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        Cursor res = myDB.rawQuery("SELECT points FROM users WHERE username = ?",new String[]{username});
+        while(res.moveToNext())
+        {
+            result = res.getInt(0);
+
+        }
+        return result;
+    }
+
     /*
     public void addBitmap(String username, byte[] image)
     {
