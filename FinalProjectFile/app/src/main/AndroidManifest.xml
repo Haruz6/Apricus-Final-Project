@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_xplorem_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProjectFile">
+
         <activity android:name=".RecommendationsActivity1"></activity>
+
+        <activity android:name=".Coupon"></activity>
+        <activity android:name=".StartActivity" />
+        <activity android:name=".QuizActivity" />
+
         <activity android:name=".SearchActivity" />
         <activity android:name=".User_Profile_Activity" />
         <activity android:name=".Page_Johor" />
@@ -17,8 +23,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".QuizActivity"/>
-        <activity android:name=".Coupon"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
