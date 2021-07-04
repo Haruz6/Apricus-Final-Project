@@ -34,7 +34,10 @@ public class QuizActivity extends AppCompatActivity {
     private int score;
     private boolean answered;
     private long backPressedTime;
+    private DatabaseHelper DB;
     @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
@@ -53,6 +56,10 @@ public class QuizActivity extends AppCompatActivity {
         questionCountTotal = questionList.size();
         Collections.shuffle(questionList);
         showNextQuestion();
+
+        DB = new DatabaseHelper(this);
+
+
         buttonConfirmNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +74,9 @@ public class QuizActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+
     }
     private void showNextQuestion() {
         rb1.setTextColor(textColorDefaultRb);
@@ -122,8 +132,11 @@ public class QuizActivity extends AppCompatActivity {
         Intent resultIntent = new Intent();
         resultIntent.putExtra(EXTRA_SCORE, score);
         setResult(RESULT_OK, resultIntent);
+
         finish();
     }
+
+
 
     @Override
     public void onBackPressed() {

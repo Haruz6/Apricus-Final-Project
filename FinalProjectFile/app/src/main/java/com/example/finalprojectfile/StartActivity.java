@@ -70,14 +70,13 @@ public class StartActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE_QUIZ) {
-            if (resultCode == RESULT_OK) {
+        super.onActivityResult(requestCode,resultCode, data);
+        if (resultCode == RESULT_OK) {
                 int score = data.getIntExtra(QuizActivity.EXTRA_SCORE,0);
-                score= score+ highscore;
-                updateHighscore(score);
+                highscore = score+ highscore;
+                updateHighscore(highscore);
             }
-        }
+
     }
 
     private void loadHighscore() {

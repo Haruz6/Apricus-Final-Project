@@ -21,7 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase myDB) {
-        myDB.execSQL("CREATE TABLE USERS(username TEXT primary key, password TEXT, image BLOB)");
+        myDB.execSQL("CREATE TABLE USERS(username TEXT primary key, password TEXT, image BLOB, points INTEGER)");
 
     }
 
@@ -89,6 +89,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public Boolean updatePoints(String username, Integer point){
+        SQLiteDatabase myDB = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("point", point);
+        Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ?", new String[]{username});
+        if(cursor.getCount() > 0)
+        {
+            long result = myDB.update("users", values, "username = ?", new String[]{username});
+            if(result == -1)
+            {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }
+
+    }
     /*
     public void addBitmap(String username, byte[] image)
     {

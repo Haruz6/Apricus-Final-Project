@@ -26,7 +26,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:text="Redeem" />
+                android:text="Redeem"
+                android:fontFamily="@font/neuehaasunicaregular"/>
 
         </RelativeLayout>
 
@@ -36,10 +37,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:text="Trivias Quiz"
         android:textColor="@android:color/white"
-        android:textSize="35sp" />
+        android:textSize="40sp"
+        android:fontFamily="@font/headingpompadour"/>
 
 
     <Button
@@ -47,8 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-
-        android:text="Start Scanning" />
+        android:text="Start Scanning"
+        android:fontFamily="@font/neuehaasunicaregular"/>
 
     <TextView
         android:id="@+id/text_view_highscore"
@@ -58,8 +60,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"
         android:text="Points: 0"
-        android:textSize="20sp"
-        android:textColor="#F0F0F0"/>
+        android:textSize="24sp"
+        android:textColor="#F0F0F0"
+        android:fontFamily="@font/headingpompadour"/>
 
     <Button
         android:id="@+id/button_start_quiz"
@@ -67,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Start Quiz" />
+        android:text="Start Quiz"
+        android:fontFamily="@font/neuehaasunicaregular"/>
 
 </RelativeLayout>
