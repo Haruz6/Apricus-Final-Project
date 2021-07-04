@@ -151,6 +151,10 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
                 intent = new Intent(HomeActivity.this, StartActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.nav_covid:
+                intent = new Intent(HomeActivity.this, activity_covidcases.class);
+                startActivity(intent);
+                break;
             case R.id.nav_camera:
                 Intent open_camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivity(open_camera);

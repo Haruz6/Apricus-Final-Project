@@ -57,7 +57,6 @@ public class User_Profile_Activity extends AppCompatActivity implements View.OnC
 
         profileImageView = (ImageView) findViewById(R.id.profile_image);
         passwordET = findViewById(R.id.change_password_edit);
-        //pickImage = (Button) findViewById(R.id.pick_image);
         saveChanges = findViewById(R.id.save_changes);
         usernameText = findViewById(R.id.profile_username);
         DB = new DatabaseHelper(this);
@@ -68,35 +67,12 @@ public class User_Profile_Activity extends AppCompatActivity implements View.OnC
         currentUser = intent.getStringExtra("currentUser");
         usernameText.setText(currentUser);
 
-        /*
-        byte[] data = DB.getBitmapByName(currentUser);
-        if(data != null)
-        {
-            Bitmap bitmap = Utils.getImage(data);
-            profileImageView.setImageBitmap(bitmap);
-        }
-        else
-        {
-            profileImageView.setImageResource(R.drawable.ic_launcher_xplorem_background);
-        }*/
-
         navback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-
-
-        /*
-        pickImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
-                photoPickerIntent.setType("image/*");
-                startActivityForResult(photoPickerIntent, SELECT_PHOTO);
-            }
-        });*/
 
 
         saveChanges.setOnClickListener(new View.OnClickListener() {

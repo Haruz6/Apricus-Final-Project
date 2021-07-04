@@ -20,6 +20,10 @@
                 android:title="Quiz"
                 android:icon="@drawable/nav_quiz"/>
             <item
+                android:id="@+id/nav_covid"
+                android:title="Covid Tracker"
+                android:icon="@drawable/ic_corona"/>
+            <item
                 android:id="@+id/nav_camera"
                 android:title="Camera"
                 android:icon="@drawable/nav_camera"/>
