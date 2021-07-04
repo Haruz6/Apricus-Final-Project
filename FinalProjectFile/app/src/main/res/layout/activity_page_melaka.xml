@@ -74,7 +74,7 @@
         android:id="@+id/textView9"
         android:layout_width="106dp"
         android:layout_height="55dp"
-        android:text="Johor"
+        android:text="Melaka"
         android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/tabBar_melaka"

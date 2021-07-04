@@ -20,6 +20,7 @@
         android:text='Kedah  also known by its honorific Darul Aman or "Abode of Peace" is a state of Malaysia, located in the northwestern part of Peninsular Malaysia. '
         android:textColor="?android:attr/textColorSecondary"
         android:textColorHighlight="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

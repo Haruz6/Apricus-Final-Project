@@ -20,6 +20,7 @@
         android:text="Malacca  is a state in Malaysia located in the southern region of the Malay Peninsula, next to the Strait of Malacca."
         android:textColor="?android:attr/textColorSecondary"
         android:textColorHighlight="@color/black"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
