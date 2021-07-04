@@ -51,46 +51,9 @@ public class SearchActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
 
-        /*
-        mAdapter.setOnItemClickListener(new SearchAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                /*
-                switch (position){
-                    case 0:
-                        Intent testIntent1 = new Intent(getApplicationContext(), Page_Johor.class);
-                        startActivity(testIntent1);
-                        break;
-                    case 1:
-                        testIntent1 = new Intent(getApplicationContext(), Page_Penang.class);
-                        startActivity(testIntent1);
-                        break;
-                    case 2:
-                        testIntent1 = new Intent(getApplicationContext(), Page_Melaka.class);
-                        startActivity(testIntent1);
-                        break;
-                    case 3:
-                        testIntent1 = new Intent(getApplicationContext(), Page_Negeri_Sembilan.class);
-                        startActivity(testIntent1);
-                        break;
-                    case 4:
-                        testIntent1 = new Intent(getApplicationContext(), Page_Kelantan.class);
-                        startActivity(testIntent1);
-                        break;
-                    case 5:
-                        testIntent1 = new Intent(getApplicationContext(), Page_Pahang.class);
-                        startActivity(testIntent1);
-                        break;
-                    case 6:
-                        testIntent1 = new Intent(getApplicationContext(), Page_Penang.class);
-                        startActivity(testIntent1);
-                        break;
-
-                }
-            }
-        });*/
 
     }
+
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.search_menu,menu);

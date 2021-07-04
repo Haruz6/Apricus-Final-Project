@@ -72,11 +72,14 @@
 
     <TextView
         android:id="@+id/textView9"
+        android:fontFamily="@font/pompadourbold"
         android:layout_width="106dp"
         android:layout_height="55dp"
         android:text="Johor"
         android:textColor="@color/white"
         android:textSize="30dp"
+        android:shadowRadius="10"
+        android:shadowColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/tabBar_johor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.091"

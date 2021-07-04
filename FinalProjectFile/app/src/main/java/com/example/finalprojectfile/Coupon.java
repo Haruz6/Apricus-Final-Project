@@ -10,14 +10,21 @@ import android.content.DialogInterface;
 
 public class Coupon extends AppCompatActivity {
 
+    String currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Intent intent = getIntent();
+
+        currentUser = intent.getStringExtra("currentUser");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coupon);
         findViewById(R.id.jump_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jumpHome();
+                jumpHome(currentUser);
             }
         });
 
@@ -69,8 +76,12 @@ public class Coupon extends AppCompatActivity {
 
     }
 
-    private void jumpHome() {
-        Intent intent = new Intent(Coupon.this, StartActivity.class);
+    private void jumpHome(String currentUser) {
+        Intent intent = getIntent();
+        //currentUser = intent.getStringExtra("currentUser");
+        intent = new Intent(Coupon.this, HomeActivity.class);
+        intent.putExtra("currentUser", currentUser);
         startActivity(intent);
+        //finish();
     }
 }

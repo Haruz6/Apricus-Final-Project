@@ -53,14 +53,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    /*
-                    if(listener != null){
-                        int position = getAdapterPosition();
-                        //String name = mSearchListFull.get(position).getmText1();
-                        if(position != RecyclerView.NO_POSITION){
-                            listener.onItemClick(position);
-                        }
-                    }*/
 
                     Context context = itemView.getContext();
                     Intent intent = new Intent(context, searchItem.getmLaunchClass());
@@ -87,10 +79,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     public void onBindViewHolder(@NonNull  SearchAdapter.SearchViewHolder holder, int position) {
         final SearchItem currentItem = mSearchList.get(position);
 
-        //holder.setIsRecyclable(false);
-
-        //holder.mImageView.setImageResource(currentItem.getmImageResource());
-        //holder.mTextView.setText(currentItem.getmText1());
         holder.bind(currentItem);
     }
 

@@ -97,6 +97,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
                     Intent testIntent3 = new Intent(cont, Page_Melaka.class);
                     cont.startActivity(testIntent3);
                     break;
+                case 3:
+                    Intent testIntent4 = new Intent(cont, Page_Negeri_Sembilan.class);
+                    cont.startActivity(testIntent4);
+                    break;
+                case 4:
+                    Intent testIntent5 = new Intent(cont, Page_Pahang.class);
+                    cont.startActivity(testIntent5);
+                    break;
+                case 5:
+                    Intent testIntent6 = new Intent(cont, Page_Kelantan.class);
+                    cont.startActivity(testIntent6);
+                    break;
+                case 6:
+                    Intent testIntent7 = new Intent(cont, Page_Kedah.class);
+                    cont.startActivity(testIntent7);
+                    break;
 
             }
 

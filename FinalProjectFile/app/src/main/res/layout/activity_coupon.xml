@@ -5,33 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="32dp"
+    android:layout_marginTop="0dp"
     tools:context=".Coupon">
 
 
 
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
             android:background="@drawable/bgpic">
 
-            <Button
-                android:id="@+id/jump_back"
-                android:layout_width="100dp"
-                android:layout_height="45dp"
-                android:background="#4e4980"
-                android:layout_alignParentRight="true"
-                android:text="Back"
-                />
+        <ImageButton
+            android:id="@+id/jump_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginRight="295dp"
+            android:layout_marginTop="25dp"
+            android:background="@null"
+            android:src="@drawable/nav_back"/>
 
-            <TextView
+        <TextView
                 android:id="@+id/redeem_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/jump_back"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="17dp"
                 android:fontFamily="@font/neuehaasunicaregular"
                 android:text="Redeem"
@@ -44,21 +47,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/redeem_text"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="6dp"
                 android:fontFamily="@font/neuehaasunicalight"
-                android:text="It is a beautiful day to travel."
+                android:text="You've got some juicy coupons!"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
-        </RelativeLayout>
-
-
-
-    <ScrollView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sub"
+            android:layout_marginTop="20dp">
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ScrollView
@@ -70,48 +71,6 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-
-                            android:id="@+id/coupontitle"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginRight="30dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:id="@+id/introduce_redeem"
-                                android:text="Use points to redeem discounts!"
-                                android:fontFamily="@font/neuehaasunicaregular"
-                                android:textSize="25sp"
-                                android:textColor="@color/black"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="12dp" />
-
-                        </RelativeLayout>
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:layout_below="@id/sub"
-                            android:id="@+id/home_starteddesc"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginRight="30dp"
-                            android:layout_marginBottom="10dp">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Select the coupon you want to redeem."
-                                android:fontFamily="@font/neuehaasunicalight"
-                                android:textSize="12sp"
-                                android:textColor="@color/black"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="12dp" />
-
-                        </RelativeLayout>
 
                         <RelativeLayout
                             android:id="@+id/startedRecycler"
@@ -126,8 +85,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="vertical">
-
-
 
                             </LinearLayout>
                         </RelativeLayout>
@@ -153,7 +110,7 @@
                                 <androidx.cardview.widget.CardView
                                     android:id="@+id/Card"
                                     android:layout_width="match_parent"
-                                    android:layout_height="100dp"
+                                    android:layout_height="150dp"
                                     app:cardElevation="1dp"
                                     app:cardMaxElevation="3dp"
                                     app:cardCornerRadius="10dp"
@@ -161,14 +118,14 @@
                                     <ImageView
                                         android:id="@+id/card_img"
                                         android:layout_width="match_parent"
-                                        android:layout_height="100dp"
+                                        android:layout_height="150dp"
                                         android:src="@drawable/food2"
                                         android:scaleType="centerCrop">
                                     </ImageView>
 
                                     <TextView
                                         android:id="@+id/card_tx"
-                                        android:layout_width="311dp"
+                                        android:layout_width="match_parent"
                                         android:layout_height="47dp"
                                         android:layout_below="@id/card_img"
                                         android:layout_gravity="bottom"
@@ -177,7 +134,7 @@
                                         android:layout_marginTop="20dp"
                                         android:layout_marginEnd="20dp"
                                         android:layout_marginBottom="20dp"
-                                        android:fontFamily="@font/neuehaasunicalight"
+                                        android:fontFamily="@font/pompadourbold"
                                         android:gravity="center"
                                         android:shadowColor="@color/black"
                                         android:shadowRadius="5"
@@ -189,17 +146,18 @@
                                 <androidx.cardview.widget.CardView
                                     android:id="@+id/card2"
                                     android:layout_width="match_parent"
-                                    android:layout_height="100dp"
+                                    android:layout_height="150dp"
                                     app:cardElevation="1dp"
                                     app:cardMaxElevation="3dp"
                                     app:cardCornerRadius="10dp"
                                     android:layout_below="@+id/Card"
+                                    android:layout_marginTop="20dp"
                                     >
 
                                     <ImageView
                                         android:id="@+id/card2_img"
                                         android:layout_width="match_parent"
-                                        android:layout_height="100dp"
+                                        android:layout_height="match_parent"
                                         android:scaleType="centerCrop"
                                         android:src="@drawable/food"></ImageView>
 
@@ -214,13 +172,13 @@
                                         android:layout_marginTop="20dp"
                                         android:layout_marginEnd="20dp"
                                         android:layout_marginBottom="20dp"
-                                        android:fontFamily="@font/neuehaasunicalight"
+                                        android:fontFamily="@font/pompadourbold"
                                         android:gravity="center"
                                         android:shadowColor="@color/black"
                                         android:shadowRadius="5"
                                         android:text="Get your discount!"
                                         android:textColor="@color/white"
-                                        android:textSize="25sp" />
+                                        android:textSize="25sp"/>
 
                                 </androidx.cardview.widget.CardView>
 
@@ -231,6 +189,12 @@
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>
-    </ScrollView>
+        </ScrollView>
+
+        </RelativeLayout>
+
+
+
+
 
 </LinearLayout>

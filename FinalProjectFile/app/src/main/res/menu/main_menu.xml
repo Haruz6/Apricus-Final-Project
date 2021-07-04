@@ -12,10 +12,6 @@
                 android:title="Profile"
                 android:icon="@drawable/nav_profile"/>
             <item
-                android:id="@+id/nav_coupons"
-                android:icon="@drawable/nav_coupon"
-                android:title="Coupons" />
-            <item
                 android:id="@+id/nav_trivia"
                 android:title="Quiz"
                 android:icon="@drawable/nav_quiz"/>

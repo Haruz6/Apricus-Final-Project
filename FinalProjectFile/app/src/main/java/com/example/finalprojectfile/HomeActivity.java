@@ -61,6 +61,10 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
         featuredLocations.add(new FeaturedHelperClass(R.drawable.penang_1, "Penang"));
         featuredLocations.add(new FeaturedHelperClass(R.drawable.johor_1, "Johor"));
         featuredLocations.add(new FeaturedHelperClass(R.drawable.melaka_1, "Melaka"));
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.negeri_sembilan_1, "Negeri Sembilan"));
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.pahang_1, "Pahang"));
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.kelantan_1, "Kelantan"));
+        featuredLocations.add(new FeaturedHelperClass(R.drawable.kedah_1, "Kedah"));
 
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -143,12 +147,9 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
                 intent.putExtra("currentUser", currentUser);
                 startActivity(intent);
                 break;
-            case R.id.nav_coupons:
-                intent = new Intent(HomeActivity.this, Coupon.class);
-                startActivity(intent);
-                break;
             case R.id.nav_trivia:
                 intent = new Intent(HomeActivity.this, StartActivity.class);
+                intent.putExtra("currentUser", currentUser);
                 startActivity(intent);
                 break;
             case R.id.nav_covid:

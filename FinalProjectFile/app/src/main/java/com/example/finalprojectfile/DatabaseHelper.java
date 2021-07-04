@@ -16,18 +16,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, DBNAME, null, 1);
+        super(context, DBNAME, null, 2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase myDB) {
-        myDB.execSQL("CREATE TABLE USERS(username TEXT primary key, password TEXT, image BLOB, points INTEGER)");
+        myDB.execSQL("CREATE TABLE USERS(username TEXT primary key, password TEXT)");
+        myDB.execSQL("CREATE TABLE USERS1(username TEXT primary key, password TEXT, points INTEGER DEFAULT 0)");
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase myDB, int i, int i1) {
         myDB.execSQL("DROP TABLE IF EXISTS USERS");
+        myDB.execSQL("DROP TABLE IF EXISTS USERS1");
+
+        onCreate(myDB);
 
     }
 
@@ -38,7 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
         contentValues.put("password", password);
-        long result = myDB.insert("users",null,contentValues);
+        long result = myDB.insert("users1",null,contentValues);
         if(result == 1) return false;
         else
             return true;
@@ -48,7 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Boolean checkusername(String username)
     {
         SQLiteDatabase myDB = this.getWritableDatabase();
-        Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ?", new String[]{username});
+        Cursor cursor = myDB.rawQuery("SELECT * FROM users1 WHERE username = ?", new String[]{username});
         if(cursor.getCount() > 0)
             return true;
         else
@@ -59,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Boolean checkusernamepassword(String username, String password)
     {
         SQLiteDatabase myDB = this.getWritableDatabase();
-        Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ? and password = ?", new String[]{username, password});
+        Cursor cursor = myDB.rawQuery("SELECT * FROM users1 WHERE username = ? and password = ?", new String[]{username, password});
         if(cursor.getCount() > 0)
             return true;
         else
@@ -70,10 +74,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("password", password);
-        Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ?", new String[]{username});
+        Cursor cursor = myDB.rawQuery("SELECT * FROM users1 WHERE username = ?", new String[]{username});
         if(cursor.getCount() > 0)
         {
-            long result = myDB.update("users", values, "username = ?", new String[]{username});
+            long result = myDB.update("users1", values, "username = ?", new String[]{username});
             if(result == -1)
             {
                 return false;
@@ -93,10 +97,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("point", point);
-        Cursor cursor = myDB.rawQuery("SELECT * FROM users WHERE username = ?", new String[]{username});
+        Cursor cursor = myDB.rawQuery("SELECT * FROM users1 WHERE username = ?", new String[]{username});
         if(cursor.getCount() > 0)
         {
-            long result = myDB.update("users", values, "username = ?", new String[]{username});
+            long result = myDB.update("users1", values, "username = ?", new String[]{username});
             if(result == -1)
             {
                 return false;
@@ -115,11 +119,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public int getScore(String username){
         int result = -1;
         SQLiteDatabase myDB = this.getWritableDatabase();
-        Cursor res = myDB.rawQuery("SELECT points FROM users WHERE username = ?",new String[]{username});
+        Cursor res = myDB.rawQuery("SELECT points FROM users1 WHERE username = ?",new String[]{username});
         while(res.moveToNext())
         {
             result = res.getInt(0);
-
         }
         return result;
     }

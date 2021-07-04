@@ -24,34 +24,45 @@ public class StartActivity extends AppCompatActivity {
 
     //private int highscore;
 
-    private DatabaseHelper DB;
+    DatabaseHelper DB;
     String currentUser;
-
+    int score;
 
     private int totalscore = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Intent intent = getIntent();
+
+        currentUser = intent.getStringExtra("currentUser");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
         Button buttonStartQuiz = findViewById(R.id.button_start_quiz);
         textViewscore = findViewById(R.id.text_view_highscore);
 
+        //String usernameCurr = intent.getStringExtra("currentUser");
 
-        showPoints();
+        //int point = DB.getScore(usernameCurr);
+        //int point = 100;
+        textViewscore.setText(currentUser);
+
+        //showPoints(currentUser);
 
         buttonStartQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(StartActivity.this,"Quiz Start!",Toast.LENGTH_SHORT).show();
-                startQuiz();
+                startQuiz(currentUser);
             }
         });
 
         findViewById(R.id.redeem_bt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jumpRedeem();
+                jumpRedeem(currentUser);
             }
         });
 
@@ -59,6 +70,8 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent();
+                currentUser = i.getStringExtra("currentUser");
+                i.putExtra("currentUser", currentUser);
                 i.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivity(i);
             }
@@ -66,21 +79,28 @@ public class StartActivity extends AppCompatActivity {
 
 
     }
-    private void startQuiz() {
+
+
+    private void startQuiz(String currentUser) {
         Intent intent = new Intent(StartActivity.this, QuizActivity.class);
+        intent.putExtra("currentUser", currentUser);
         startActivity(intent);
     }
 
-    private void jumpRedeem() {
-        Intent intent = new Intent(StartActivity.this, Coupon.class);
+    private void jumpRedeem(String currentUser) {
+        Intent intent = new Intent();
+        //currentUser = intent.getStringExtra("currentUser");
+        intent = new Intent(StartActivity.this, Coupon.class);
+        intent.putExtra("currentUser", currentUser);
         startActivity(intent);
     }
 
-    private void showPoints()
+    private void showPoints(String currentUser)
     {
-        Intent data = new Intent();
-        String currentUser = data.getStringExtra("currentUser");
+        //Intent data = new Intent();
+        //String currentUser = data.getStringExtra("currentUser");
         int point = DB.getScore(currentUser);
+        //textViewscore.setText("Points: " + String.valueOf(point));
         textViewscore.setText("Points: " + String.valueOf(point));
     }
 

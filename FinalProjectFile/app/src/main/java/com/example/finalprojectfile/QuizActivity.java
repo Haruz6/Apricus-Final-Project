@@ -139,9 +139,12 @@ public class QuizActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String usernameCurr = intent.getStringExtra("currentUser");
-        int points = DB.getScore(usernameCurr)+ score;
-        DB.updatePoints(usernameCurr, points);
-        finish();
+        intent = new Intent(QuizActivity.this, Coupon.class);
+        intent.putExtra("currentUser", usernameCurr);
+        startActivity(intent);
+        //int points = DB.getScore(usernameCurr)+ score;
+        //DB.updatePoints(usernameCurr, points);
+        //finish();
     }
 
 
