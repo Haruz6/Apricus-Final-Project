@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.widget.Toast;
 
 public class Coupon extends AppCompatActivity {
 
@@ -38,6 +39,11 @@ public class Coupon extends AppCompatActivity {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                String usernameCurr = intent.getStringExtra("currentUser");
+                                Intent intent = new Intent(Coupon.this, StartActivity.class);
+                                intent.putExtra("currentUser", usernameCurr);
+                                startActivity(intent);
+                                Toast.makeText(Coupon.this,"Coupons redeemed! Congrats!",Toast.LENGTH_SHORT).show();
 
                             }
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {//添加返回按钮

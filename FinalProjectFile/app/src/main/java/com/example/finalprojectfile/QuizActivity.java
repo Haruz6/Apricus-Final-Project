@@ -131,6 +131,7 @@ public class QuizActivity extends AppCompatActivity {
             buttonConfirmNext.setText("Finish");
         }
     }
+
     private void finishQuiz() {
 
         Intent resultIntent = new Intent();
@@ -139,9 +140,20 @@ public class QuizActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String usernameCurr = intent.getStringExtra("currentUser");
-        intent = new Intent(QuizActivity.this, Coupon.class);
-        intent.putExtra("currentUser", usernameCurr);
-        startActivity(intent);
+
+        if(score>=5){
+            intent = new Intent(QuizActivity.this, Coupon.class);
+            intent.putExtra("currentUser", usernameCurr);
+            startActivity(intent);
+
+        }else{
+            intent = new Intent(QuizActivity.this, StartActivity.class);
+            intent.putExtra("currentUser", usernameCurr);
+            startActivity(intent);
+            Toast.makeText(QuizActivity.this,"You have to get full score, try your luck next time!",Toast.LENGTH_SHORT).show();
+        }
+
+
         //int points = DB.getScore(usernameCurr)+ score;
         //DB.updatePoints(usernameCurr, points);
         //finish();
