@@ -38,12 +38,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //To insert user data
     public Boolean insertData(String username, String password)
     {
+        int boogusData = 0;
         SQLiteDatabase myDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("username", username);
         contentValues.put("password", password);
+        contentValues.put("points", boogusData);
         long result = myDB.insert("users1",null,contentValues);
-        if(result == 1) return false;
+        if(result == -1) return false;
         else
             return true;
     }

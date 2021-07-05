@@ -141,7 +141,7 @@ public class QuizActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String usernameCurr = intent.getStringExtra("currentUser");
 
-        if(score>=5){
+        if(score>=3){
             intent = new Intent(QuizActivity.this, Coupon.class);
             intent.putExtra("currentUser", usernameCurr);
             startActivity(intent);
@@ -150,7 +150,7 @@ public class QuizActivity extends AppCompatActivity {
             intent = new Intent(QuizActivity.this, HomeActivity.class);
             intent.putExtra("currentUser", usernameCurr);
             startActivity(intent);
-            Toast.makeText(QuizActivity.this,"You have to get full score, try your luck next time!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(QuizActivity.this,"You have to get at least 3 points, try your luck next time!",Toast.LENGTH_SHORT).show();
         }
 
 
