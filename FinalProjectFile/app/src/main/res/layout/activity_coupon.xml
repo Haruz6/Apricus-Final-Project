@@ -137,8 +137,8 @@
                                         android:fontFamily="@font/pompadourbold"
                                         android:gravity="center"
                                         android:shadowColor="@color/black"
-                                        android:shadowRadius="5"
-                                        android:text="Get your food discount!"
+                                        android:shadowRadius="15"
+                                        android:text="50% off Nasi Lemak"
                                         android:textColor="@color/white"
                                         android:textSize="25sp" />
                                 </androidx.cardview.widget.CardView>
@@ -175,8 +175,8 @@
                                         android:fontFamily="@font/pompadourbold"
                                         android:gravity="center"
                                         android:shadowColor="@color/black"
-                                        android:shadowRadius="5"
-                                        android:text="Get your discount!"
+                                        android:shadowRadius="15"
+                                        android:text="50% Discount Kwetiauw"
                                         android:textColor="@color/white"
                                         android:textSize="25sp"/>
 
