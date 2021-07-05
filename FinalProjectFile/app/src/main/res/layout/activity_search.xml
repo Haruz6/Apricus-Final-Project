@@ -22,13 +22,26 @@
         android:layout_marginTop="10dp"
         android:padding="10dp"/>
 
+    <TextView
+        android:id="@+id/searchsubTextpage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchTextpage"
+        android:text="Click on the search icon above to start searching"
+        android:fontFamily="@font/neuehaasunicaregular"
+        android:textSize="12dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="0dp"
+        android:padding="10dp"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/searchTextpage"
+        android:layout_below="@id/searchsubTextpage"
         android:layout_marginTop="5dp"
+        android:layoutAnimation="@anim/recyclerlayout_anim"
         android:background="@android:color/white"
         android:padding="10dp" />
 

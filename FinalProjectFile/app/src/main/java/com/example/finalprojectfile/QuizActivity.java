@@ -78,9 +78,9 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
+
+
     private void showNextQuestion() {
         rb1.setTextColor(textColorDefaultRb);
         rb2.setTextColor(textColorDefaultRb);
@@ -147,7 +147,7 @@ public class QuizActivity extends AppCompatActivity {
             startActivity(intent);
 
         }else{
-            intent = new Intent(QuizActivity.this, StartActivity.class);
+            intent = new Intent(QuizActivity.this, HomeActivity.class);
             intent.putExtra("currentUser", usernameCurr);
             startActivity(intent);
             Toast.makeText(QuizActivity.this,"You have to get full score, try your luck next time!",Toast.LENGTH_SHORT).show();

@@ -6,6 +6,8 @@ import android.net.sip.SipSession;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
@@ -21,6 +23,7 @@ import java.util.List;
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> implements Filterable {
     private ArrayList<SearchItem> mSearchList;
     public ArrayList<SearchItem> mSearchListFull;
+    int lastPosition = -1;
 
     private OnItemClickListener mListener;
 
@@ -62,6 +65,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         }
     }
 
+
     public SearchAdapter(Context context, ArrayList<SearchItem> searchlist){
         mSearchList = searchlist;
         mSearchListFull = new ArrayList<>(searchlist);
@@ -78,6 +82,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
     @Override
     public void onBindViewHolder(@NonNull  SearchAdapter.SearchViewHolder holder, int position) {
         final SearchItem currentItem = mSearchList.get(position);
+        //setAnimation(holder.itemView, position);
 
         holder.bind(currentItem);
     }

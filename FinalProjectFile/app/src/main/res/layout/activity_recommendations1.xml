@@ -39,6 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
+        android:layoutAnimation="@anim/recyclerlayout_anim"
         android:background="@android:color/white"
         android:padding="10dp"/>
 

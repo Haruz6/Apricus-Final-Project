@@ -59,21 +59,22 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.redeem_bt).setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.jump_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jumpRedeem(currentUser);
+
+                jumpBack(currentUser);
             }
         });
 
         findViewById(R.id.bt_open).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent();
-                currentUser = i.getStringExtra("currentUser");
-                i.putExtra("currentUser", currentUser);
-                i.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivity(i);
+
+                Intent open_camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivity(open_camera);
+
             }
         });
 
@@ -87,10 +88,10 @@ public class StartActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void jumpRedeem(String currentUser) {
+    private void jumpBack(String currentUser) {
         Intent intent = new Intent();
         //currentUser = intent.getStringExtra("currentUser");
-        intent = new Intent(StartActivity.this, Coupon.class);
+        intent = new Intent(StartActivity.this, HomeActivity.class);
         intent.putExtra("currentUser", currentUser);
         startActivity(intent);
     }

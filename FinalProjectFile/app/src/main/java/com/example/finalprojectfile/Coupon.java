@@ -40,7 +40,7 @@ public class Coupon extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
                                 String usernameCurr = intent.getStringExtra("currentUser");
-                                Intent intent = new Intent(Coupon.this, StartActivity.class);
+                                Intent intent = new Intent(Coupon.this, HomeActivity.class);
                                 intent.putExtra("currentUser", usernameCurr);
                                 startActivity(intent);
                                 Toast.makeText(Coupon.this,"Coupons redeemed! Congrats!",Toast.LENGTH_SHORT).show();
@@ -67,6 +67,11 @@ public class Coupon extends AppCompatActivity {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                String usernameCurr = intent.getStringExtra("currentUser");
+                                Intent intent = new Intent(Coupon.this, HomeActivity.class);
+                                intent.putExtra("currentUser", usernameCurr);
+                                startActivity(intent);
+                                Toast.makeText(Coupon.this,"Coupons redeemed! Congrats!",Toast.LENGTH_SHORT).show();
 
                             }
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {//添加返回按钮

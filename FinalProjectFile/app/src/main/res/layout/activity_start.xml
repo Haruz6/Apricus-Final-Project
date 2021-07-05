@@ -13,6 +13,18 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
+        <ImageButton
+            android:id="@+id/jump_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginRight="295dp"
+            android:layout_marginTop="25dp"
+            android:background="@null"
+            android:src="@drawable/nav_back"/>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -23,13 +35,6 @@
             android:gravity="center"
             android:backgroundTint="@color/design_default_color_background">
 
-            <Button
-                android:id="@+id/redeem_bt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="false"
-                android:text="Redeem"
-                android:fontFamily="@font/neuehaasunicaregular"/>
 
         </RelativeLayout>
 

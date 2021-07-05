@@ -43,9 +43,6 @@ public class HomeActivity extends AppCompatActivity implements RecyclerAdapter.O
 
     String currentUser;
 
-    String statesNames[] = {"Sarawak", "Sabah", "Johor", "Selangor",
-    "Kedah", "Penang", "Kelantan", "Perak", "Pahang",
-    "Negeri Sembilan", "Perlis", "Terengganu", "Malacca"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
