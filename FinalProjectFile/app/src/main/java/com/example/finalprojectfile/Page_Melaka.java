@@ -24,6 +24,26 @@ public class Page_Melaka extends AppCompatActivity {
         PagerAdapter_melaka pagerAdapter = new PagerAdapter_melaka(getSupportFragmentManager(),tablayout.getTabCount());
         viewPager_melaka.setAdapter(pagerAdapter);
 
+        viewPager_melaka.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int currectitem = viewPager_melaka.getCurrentItem();
+                tablayout.setScrollPosition(currectitem,0,false);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
         tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

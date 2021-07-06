@@ -23,6 +23,26 @@ public class Page_Johor extends AppCompatActivity {
         ViewPager viewPager_johor = findViewById(R.id.viewPager1_johor);
         PagerAdapter_johor pagerAdapter = new PagerAdapter_johor(getSupportFragmentManager(),tablayout.getTabCount());
         viewPager_johor.setAdapter(pagerAdapter);
+        viewPager_johor.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int currectitem = viewPager_johor.getCurrentItem();
+                tablayout.setScrollPosition(currectitem,0,false);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
 
         tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -40,5 +60,6 @@ public class Page_Johor extends AppCompatActivity {
 
             }
         });
+
     }
 }

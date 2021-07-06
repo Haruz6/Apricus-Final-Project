@@ -23,6 +23,25 @@ public class Page_Kedah extends AppCompatActivity {
         ViewPager viewPager_kedah = findViewById(R.id.viewPager1_kedah);
         PagerAdapter_kedah pagerAdapter = new PagerAdapter_kedah(getSupportFragmentManager(),tablayout.getTabCount());
         viewPager_kedah.setAdapter(pagerAdapter);
+        viewPager_kedah.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int currectitem = viewPager_kedah.getCurrentItem();
+                tablayout.setScrollPosition(currectitem,0,false);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

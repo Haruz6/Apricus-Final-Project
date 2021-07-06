@@ -24,6 +24,26 @@ public class Page_Negeri_Sembilan extends AppCompatActivity {
         PagerAdapter_negeri_sembilan pagerAdapter = new PagerAdapter_negeri_sembilan(getSupportFragmentManager(),tablayout.getTabCount());
         viewPager_negeri_sembilan.setAdapter(pagerAdapter);
 
+        viewPager_negeri_sembilan.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int currectitem = viewPager_negeri_sembilan.getCurrentItem();
+                tablayout.setScrollPosition(currectitem,0,false);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
         tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

@@ -24,6 +24,26 @@ public class Page_Penang extends AppCompatActivity {
         PagerAdapter_penang pagerAdapter = new PagerAdapter_penang(getSupportFragmentManager(),tablayout.getTabCount());
         viewPager_penang.setAdapter(pagerAdapter);
 
+        viewPager_penang.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int currectitem = viewPager_penang.getCurrentItem();
+                tablayout.setScrollPosition(currectitem,0,false);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
         tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

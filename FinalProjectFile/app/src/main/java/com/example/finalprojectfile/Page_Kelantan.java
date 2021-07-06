@@ -24,6 +24,26 @@ public class Page_Kelantan extends AppCompatActivity {
         PagerAdapter_kelantan pagerAdapter = new PagerAdapter_kelantan(getSupportFragmentManager(),tablayout.getTabCount());
         viewPager_kelantan.setAdapter(pagerAdapter);
 
+        viewPager_kelantan.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                int currectitem = viewPager_kelantan.getCurrentItem();
+                tablayout.setScrollPosition(currectitem,0,false);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
         tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
